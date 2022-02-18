@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import { BASE_URL, API_KEY } from './constants';
+import { BASE_URL, API_KEY } from '../constants';
 
 export default function Info(props) {
     const { characterId, closeInfo } = props;
@@ -9,14 +9,24 @@ export default function Info(props) {
     useEffect(() => {
         axios.get(`${BASE_URL}/people/${characterId}?api_key=${API_KEY}`)
         .then(res => {
-            console.log(res.data);
+            setInfo(res.data);
         })
         .catch(err => console.error(err))
     }, [characterId])
 
     return (
         <div>
-            
+            <h2>Info:</h2>
+            {
+                info &&
+                <>
+                    <p>Height: {info.height}</p>
+                    <p>Mass: {info.mass}</p> 
+                    <p>Hair Color: {info.hair_color}</p> 
+                    <p>Skin Color: {info.skin_color}</p> 
+                </>
+            }
+            <button onClick={closeInfo}>Close</button>
         </div>
     )
 }

@@ -34,8 +34,8 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
-      {characters.length > 0 ? characters.map(character => {
-        return <Character info={character} key={character.id} openInfo={openInfo} />
+      {characters.length > 0 ? characters.map((character, index) => {
+        return <Character info={character} key={index} openInfo={openInfo} />
       }) : <h1>LOADING</h1>}
       {
         currentCharacterId && <Info characterId={currentCharacterId} closeInfo={closeInfo} />
