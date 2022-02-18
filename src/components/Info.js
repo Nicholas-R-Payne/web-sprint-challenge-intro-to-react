@@ -1,6 +1,24 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { BASE_URL, API_KEY } from '../constants';
+import styled, { keyframes } from 'styled-components';
+
+const StyledInfo = styled.div`
+color: white;
+font-weight: bold;
+font-size: 20px;
+
+h2 {
+    color: black;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: skyblue;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+`
 
 export default function Info(props) {
     const { character, closeInfo } = props;
@@ -15,7 +33,7 @@ export default function Info(props) {
     }, [character])
 
     return (
-        <div>
+        <StyledInfo>
             <h2>Info:</h2>
             {
                 info &&
@@ -30,6 +48,6 @@ export default function Info(props) {
                 </>
             }
             <button onClick={closeInfo}>Close</button>
-        </div>
+        </StyledInfo>
     )
 }

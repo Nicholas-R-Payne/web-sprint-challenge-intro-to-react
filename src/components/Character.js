@@ -5,7 +5,11 @@ const StyledCharacter = styled.div`
 color: white;
 font-weight: bold;
 font-size: 20px;
-margin: 20px;
+
+button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: skyblue;
+}
 `
 
 // Write your Character component here
