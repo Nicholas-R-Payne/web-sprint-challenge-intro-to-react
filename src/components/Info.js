@@ -3,7 +3,18 @@ import axios from 'axios';
 import { BASE_URL, API_KEY } from '../constants';
 import styled, { keyframes } from 'styled-components';
 
+const kf = keyframes`
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateZ(0);
+  }
+`
+
 const StyledInfo = styled.div`
+opacity: 0;
+transform: scale(2) rotateZ(180deg);
+animation: ${kf} 0.5s ease-in-out forwards;
+
 color: red;
 font-weight: bold;
 font-size: 20px;

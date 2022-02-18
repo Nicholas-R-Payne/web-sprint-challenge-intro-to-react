@@ -1,7 +1,34 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
+// const kf = keyframes`
+//   100% {
+//     opacity: 1;
+//     transform: scale(1);
+//   }
+// `
+
+// opacity: 0;
+// transform: scale(2);
+// animation: ${kf} 0.5s ease-in-out forwards;
+
+const kf = keyframes`
+  0% {
+    top: 500px;
+    transform: rotateX(20deg) translateZ(0);
+  }
+  100% {
+    top: 0;
+    transform: rotateX(25deg) translateZ(-2500);
+  }
+`
+
 const StyledCharacter = styled.div`
+
+position: relative;
+transform-origin: 50% 100%;
+animation: ${kf} 2s linear;
+
 color: #00B7EB;
 text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 font-weight: bold;
