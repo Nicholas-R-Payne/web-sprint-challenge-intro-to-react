@@ -9,14 +9,14 @@ const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
   const [characters, setCharacters] = useState([])
-  const [currentCharacterId, setCurrentCharacterId] = useState(null)
+  const [currentCharacter, setCurrentCharacter] = useState(null)
 
-  const openInfo = id => {
-    setCurrentCharacterId(id);
+  const openInfo = character => {
+    setCurrentCharacter(character);
   }
 
   const closeInfo = () => {
-    setCurrentCharacterId(null);
+    setCurrentCharacter(null);
   }
 
   // Fetch characters from the API in an effect hook. Remember, anytime you have a 
@@ -35,10 +35,10 @@ const App = () => {
     <div className="App">
       <h1 className="Header">Characters</h1>
       {characters.length > 0 ? characters.map((character, index) => {
-        return <Character info={character} key={index} openInfo={openInfo} />
-      }) : <h1>LOADING</h1>}
+        return <Character info={character} index={index} key={index} openInfo={openInfo} /> 
+      }) : <h3>LOADING</h3>}
       {
-        currentCharacterId && <Info characterId={currentCharacterId} closeInfo={closeInfo} />
+        currentCharacter && <Info character={currentCharacter} closeInfo={closeInfo} />
       }
     </div>
   );

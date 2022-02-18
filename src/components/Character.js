@@ -2,11 +2,11 @@ import React from 'react';
 
 // Write your Character component here
 
-const Character = props => {
+const Character = (props) => {
     return (
         <div>
             {props.info.name}
-            <button onClick={() => props.openInfo(props.info)}>
+            <button onClick={() => props.openInfo(props.index + 1)}>
                 See Info
             </button>
         </div>
