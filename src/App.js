@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import axios from 'axios';
+import { BASE_URL, API_KEY } from './constants';
 import Character from './components/Character'
 import Info from './components/Info'
 
@@ -23,7 +24,7 @@ const App = () => {
   // sync up with, if any.
 
   useEffect(() => {
-    axios.get('https://swapi.dev/api/people')
+    axios.get(`${BASE_URL}/people?api_key=${API_KEY}`)
     .then(res => {
       setCharacters(res.data);
     })

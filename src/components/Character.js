@@ -4,7 +4,7 @@ import React from 'react';
 
 const Character = props => {
     return (
-        <div classname='character'>
+        <div>
             {props.info.name}
             <button onClick={() => props.openInfo(props.info.id)}>
                 See Info
