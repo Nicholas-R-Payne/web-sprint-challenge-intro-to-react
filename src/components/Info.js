@@ -20,8 +20,11 @@ export default function Info(props) {
             {
                 info &&
                 <>
+                    <p>Gender: {info.gender}</p>
                     <p>Height: {info.height}</p>
                     <p>Mass: {info.mass}</p> 
+                    <p>Birth Year: {info.birth_year}</p>
+                    <p>Eye Color: {info.eye_color}</p> 
                     <p>Hair Color: {info.hair_color}</p> 
                     <p>Skin Color: {info.skin_color}</p> 
                 </>
