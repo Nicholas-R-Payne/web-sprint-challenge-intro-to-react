@@ -4,9 +4,13 @@ import { BASE_URL, API_KEY } from '../constants';
 import styled, { keyframes } from 'styled-components';
 
 const StyledInfo = styled.div`
-color: white;
+color: red;
 font-weight: bold;
 font-size: 20px;
+
+p {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
 
 h2 {
     color: black;
@@ -34,7 +38,7 @@ export default function Info(props) {
 
     return (
         <StyledInfo>
-            <h2>Info:</h2>
+            <h2>Info</h2>
             {
                 info &&
                 <>

@@ -2,7 +2,8 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const StyledCharacter = styled.div`
-color: white;
+color: #00B7EB;
+text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 font-weight: bold;
 font-size: 20px;
 
